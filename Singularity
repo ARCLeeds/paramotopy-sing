@@ -23,6 +23,7 @@ export PATH="$PATH:/BertiniSource_v16/install/bin"
 
 cd / 
 
+########### download and install paramotopy
 git clone https://github.com/ofloveandhate/paramotopy.git
 
 cd paramotopy
