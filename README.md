@@ -7,12 +7,11 @@ A singularity build script for creating a simple Ubuntu 18 container with [Berti
 ```bash
 $  singularity pull shub://ARCLeeds/paramotopy
 
-
 $ ls
 paramotopy.sif
 
 # directly call paramotopy executeable from container
 $ singularity run paramotopy.sif paramotopy
-Enter the input file\'s name.       (% cancels when applicable)
+Enter the input file's name.       (% cancels when applicable)
 : 
 ```
