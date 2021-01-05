@@ -1,3 +1,7 @@
-# gitignore file for bertinit build
+# gitignore file for bertini build
 
 *.sif
+
+# ignore the testing items
+input
+bfiles_input

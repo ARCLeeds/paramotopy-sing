@@ -14,12 +14,8 @@ chmod -R 775 BertiniSource_v16
 
 cd BertiniSource_v16
 mkdir install
-./configure --prefix=/BertiniSource_v16/install/
+./configure
 make && make install
-
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/BertiniSource_v16/install/lib"
-
-export PATH="$PATH:/BertiniSource_v16/install/bin"
 
 cd / 
 
@@ -29,10 +25,19 @@ git clone https://github.com/ofloveandhate/paramotopy.git
 cd paramotopy
 libtoolize && autoreconf -vfi
 mkdir install
-./configure --prefix=/paramotopy/install LDFLAGS='-L/BertiniSource_v16/install/lib' CPPFLAGS="-I/BertiniSource_v16/install/include"
-
+./configure 
 make && make install
+
+%environment
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
 %runscript
 
-    exec "/paramotopy/install/bin/$@"
+    # if the length of command line arguments is 0
+    if [ $1 = "help" ]; then
+    printf "This container provides the following executables:\n"
+    ls /usr/local/bin
+    else
+    exec "/usr/local/bin/$@"
+    fi
