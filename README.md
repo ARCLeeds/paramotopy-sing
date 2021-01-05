@@ -11,8 +11,6 @@ $  singularity pull --name shub://ARCLeeds/paramotopy-sing
 $ ls
 paramotopy-sing.sif
 
-# directly call paramotopy executeable from container
-$ singularity run paramotopy-sing.sif paramotopy
-Enter the input file's name.       (% cancels when applicable)
-: 
+# directly call paramotopy executeable from container and mount a specific directory as container HOME
+$ singularity run -H /path/to/file paramotopy-sing.sif paramotopy file
 ```
