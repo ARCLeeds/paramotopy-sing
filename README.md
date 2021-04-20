@@ -6,7 +6,7 @@ A singularity build script for creating a simple Ubuntu 18 container with [Berti
 ## Usage
 
 ```bash
-$  singularity pull --name shub://ARCLeeds/paramotopy-sing
+$  singularity pull shub://ARCLeeds/paramotopy-sing
 
 $ ls
 paramotopy-sing.sif
